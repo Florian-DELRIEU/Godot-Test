@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Ball.tscn" type="PackedScene" id=2]
@@ -31,6 +31,8 @@ bounce = 0.5
 
 [sub_resource type="PhysicsMaterial" id=9]
 bounce = 0.5
+
+[sub_resource type="PhysicsMaterial" id=10]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -161,3 +163,4 @@ position = Vector2( 383, 154 )
 
 [node name="Ball2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 665, 131 )
+physics_material_override = SubResource( 10 )
