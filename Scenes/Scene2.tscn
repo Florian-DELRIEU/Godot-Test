@@ -1,0 +1,20 @@
+[gd_scene format=2]
+
+[node name="Main_Window" type="RichTextLabel"]
+anchor_right = 0.239
+margin_right = 0.264008
+margin_bottom = 43.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TxtA" type="RichTextLabel" parent="."]
+margin_left = 15.0
+margin_top = 8.0
+margin_right = 124.0
+margin_bottom = 68.0
+text = "Ceci est une longue phrase de test
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
