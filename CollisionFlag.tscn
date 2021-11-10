@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Flag_of_France.svg.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 33.5, 24 )
+
+[node name="CollisionFlag" type="RigidBody2D"]
+gravity_scale = 4.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="FlagOfFrancesvg" type="Sprite" parent="."]
+position = Vector2( -1.90735e-06, -1.19209e-07 )
+scale = Vector2( 0.0825, 0.0900563 )
+texture = ExtResource( 1 )
