@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Flag_of_France.svg.png-481af4faaa88b5d1b72310fcb7d7ac49.stex"
+path="res://.import/Flag_of_France.svg.png-51e6c9cdd3284068012f53c74a11cfca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Flag_of_France.svg.png"
-dest_files=[ "res://.import/Flag_of_France.svg.png-481af4faaa88b5d1b72310fcb7d7ac49.stex" ]
+source_file="res://assets/Flag_of_France.svg.png"
+dest_files=[ "res://.import/Flag_of_France.svg.png-51e6c9cdd3284068012f53c74a11cfca.stex" ]
 
 [params]
 
