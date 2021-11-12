@@ -1,10 +1,23 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Images/icon.png" type="Texture" id=1]
+[ext_resource path="res://Codes/Player.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
 
 [node name="scene01" type="Node2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Player" type="KinematicBody2D" parent="."]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
 texture = ExtResource( 1 )
-region_enabled = true
 region_rect = Rect2( 10, 27, 44, 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+visible = false
+shape = SubResource( 1 )

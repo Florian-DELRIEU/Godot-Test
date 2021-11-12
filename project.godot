@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="Godot-Test"
+run/main_scene="res://Scenes/scene01.tscn"
 config/icon="res://Images/icon.png"
 
 [physics]
