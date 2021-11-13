@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var vel = Vector2()
 var speed
-const GRAVITY = 9.81 + 100
+const GRAVITY = 9.81 * 10
 
 func _process(delta):
 	pass
