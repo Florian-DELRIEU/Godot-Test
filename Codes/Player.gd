@@ -1,14 +1,12 @@
 extends KinematicBody2D
 
 var vel = Vector2()
-const speed = 100
-
-func _ready():
-	pass # Replace with function body.
+var speed
 
 func _process(delta):
 	vel.x = 0
 	vel.y = 0
+	speed = 200 if Input.is_action_pressed("Shift") else 100
 	
 	if Input.is_action_pressed("ui_right"):  # detecte le mapping de touche "ui_right"
 		vel.x += speed
