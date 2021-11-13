@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 var vel = Vector2()
 var speed
-const GRAVITY = 100
-const JUMP = 70
+const GRAVITY = 9.81 * 10
+const JUMP = 200
 
 func _process(delta):
 	pass
@@ -23,9 +23,7 @@ func mouvement_loop(delta):
 	var speed = 400 if Input.is_action_pressed("Shift") else 200
 	
 	var dirX = int(right) - int(left)
-	var dirY = int(down) - int(up) + (GRAVITY* delta)
-	if jump: dirY -= JUMP
-	
+	var dirY = int(down) - int(up)# + (GRAVITY - JUMP ) * delta
 	print(dirX, " , ", dirY)
 	
 	vel.x = speed*dirX
