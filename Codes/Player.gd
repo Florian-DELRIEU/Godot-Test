@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var vel = Vector2()
 var speed
-const GRAVITY = 9.81 + 10
+const GRAVITY = 9.81 + 100
 
 func _process(delta):
 	pass
@@ -13,14 +13,15 @@ func _physics_process(delta):
 	mouvement_loop(delta)
 		
 func mouvement_loop(delta):
-	var speed = 200 if Input.is_action_pressed("Shift") else 100
 	var right = Input.is_action_pressed("ui_right") # detecte le mapping de touche "ui_right"
 	var left  = Input.is_action_pressed("ui_left")
 	var down  = Input.is_action_pressed("ui_down")
 	var up    = Input.is_action_pressed("ui_up")
 	
+	var speed = 400 if Input.is_action_pressed("Shift") else 200
+	
 	var dirX = int(right) - int(left)
-	var dirY = int(down) - int(up) + GRAVITY * delta
+	var dirY = int(down) - int(up) + (GRAVITY ) * delta
 	print(dirX, " , ", dirY)
 	
 	vel.x = speed*dirX
