@@ -6,7 +6,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right"):  # detecte le mapping de touche "ui_right"
 		vel.x += 1
 	if Input.is_action_pressed("ui_left"):
 		vel.x -= 1
@@ -14,4 +14,6 @@ func _process(delta):
 		vel.y += 1
 	if Input.is_action_pressed("ui_up"):
 		vel.y -= 1
-	move_and_slide(vel)
+	move_and_slide(vel) # bouge le slide de la vitesse :vel:
+	
+	print("Speed :", vel.x," , ", vel.y)
