@@ -32,7 +32,7 @@ func mouvement_loop(delta):
 # Dir Y loop
 	if is_on_floor():
 		if jump: vel.y = -JUMP
-		elif vel.y > 0: vel.y = 0
+		else: vel.y = 0
 # Print on log
 	print(vel.x, " , ", vel.y, " , ", dirX)
 	
