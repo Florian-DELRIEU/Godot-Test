@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Images/icon.png" type="Texture" id=1]
 [ext_resource path="res://Codes/Player.gd" type="Script" id=2]
 [ext_resource path="res://Images/image-13.png" type="Texture" id=3]
+[ext_resource path="res://Codes/debug_label.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
@@ -27,72 +28,90 @@ region_rect = Rect2( 10, 27, 44, 12 )
 visible = false
 shape = SubResource( 1 )
 
-[node name="Sol3" type="Node2D" parent="."]
+[node name="Sol" type="Node2D" parent="."]
 position = Vector2( 0, 608 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="platform" type="StaticBody2D" parent="Sol3"]
+[node name="platform" type="StaticBody2D" parent="Sol"]
 position = Vector2( 128, -64 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Sol3/platform"]
+[node name="Sprite" type="Sprite" parent="Sol/platform"]
 position = Vector2( -1.52588e-05, 0 )
 scale = Vector2( 0.423141, 0.711111 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 87, 315, 605, 180 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sol3/platform"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sol/platform"]
 shape = SubResource( 2 )
 
-[node name="platform2" type="StaticBody2D" parent="Sol3"]
+[node name="platform2" type="StaticBody2D" parent="Sol"]
 position = Vector2( 384, -64 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Sol3/platform2"]
+[node name="Sprite" type="Sprite" parent="Sol/platform2"]
 position = Vector2( -1.52588e-05, 0 )
 scale = Vector2( 0.423141, 0.711111 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 87, 315, 605, 180 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sol3/platform2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sol/platform2"]
 shape = SubResource( 2 )
 
-[node name="platform3" type="StaticBody2D" parent="Sol3"]
+[node name="platform3" type="StaticBody2D" parent="Sol"]
 position = Vector2( 640, -160 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Sol3/platform3"]
+[node name="Sprite" type="Sprite" parent="Sol/platform3"]
 position = Vector2( -1.52588e-05, 0 )
 scale = Vector2( 0.423141, 0.711111 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 87, 315, 605, 180 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sol3/platform3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sol/platform3"]
 shape = SubResource( 2 )
 
-[node name="platform4" type="StaticBody2D" parent="Sol3"]
+[node name="platform4" type="StaticBody2D" parent="Sol"]
 position = Vector2( 896, -64 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Sol3/platform4"]
+[node name="Sprite" type="Sprite" parent="Sol/platform4"]
 position = Vector2( -1.52588e-05, 0 )
 scale = Vector2( 0.423141, 0.711111 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 87, 315, 605, 180 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sol3/platform4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sol/platform4"]
 shape = SubResource( 2 )
+
+[node name="DebugNode" type="Node2D" parent="."]
+visible = false
+position = Vector2( 1024, 0 )
+
+[node name="Label" type="Label" parent="DebugNode"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -1020.0
+margin_top = 7.0
+margin_right = -921.0
+margin_bottom = 56.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "FPS : 60"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
