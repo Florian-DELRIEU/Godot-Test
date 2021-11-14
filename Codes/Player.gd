@@ -23,8 +23,10 @@ func mouvement_loop(delta):
 # Dir X loop
 	if dirX == +1:
 		vel.x = min(vel.x+ACC,curr_max_speed)
+		$Sprite.flip_h = false
 	elif dirX == -1:
 		vel.x = max(vel.x-ACC,-curr_max_speed)
+		$Sprite.flip_h = true
 	else:
 		vel.x = lerp(vel.x, 0, 0.80) # Va de vel.x à 0 par tranche de 80%
 # Dir Y loop
