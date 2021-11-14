@@ -1,100 +1,90 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Images/sols_sprite.jpg" type="Texture" id=1]
+[ext_resource path="res://Images/New Piskel.png" type="Texture" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 113, 114 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 16 )
 
-[node name="tile_set01" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 
-[node name="gravel" type="Sprite" parent="."]
-position = Vector2( 479, 327 )
+[node name="grass" type="Sprite" parent="."]
+position = Vector2( 480, 464 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 530, 265, 227, 227 )
+region_rect = Rect2( 0, 0, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 479, 327 )
+[node name="StaticBody2D" type="StaticBody2D" parent="grass"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0, 1 )
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass/StaticBody2D"]
+shape = SubResource( 2 )
 
-[node name="old_bricks" type="Sprite" parent="."]
-position = Vector2( 184, 323 )
+[node name="grass2" type="Sprite" parent="."]
+position = Vector2( 520, 464 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 265, 265, 227, 227 )
+region_rect = Rect2( 32, 0, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="old_bricks"]
-position = Vector2( 295, 4 )
+[node name="StaticBody2D" type="StaticBody2D" parent="grass2"]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="old_bricks/StaticBody2D2"]
-position = Vector2( -295, -4 )
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass2/StaticBody2D"]
+shape = SubResource( 2 )
 
-[node name="brown_bricks" type="Sprite" parent="."]
-position = Vector2( 318, 31 )
+[node name="grass3" type="Sprite" parent="."]
+position = Vector2( 560, 464 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 795, 265, 227, 227 )
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="brown_bricks"]
-position = Vector2( 161, 296 )
+[node name="StaticBody2D" type="StaticBody2D" parent="grass3"]
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="brown_bricks/StaticBody2D3"]
-position = Vector2( -163, -295 )
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass3/StaticBody2D"]
+shape = SubResource( 2 )
 
-[node name="good_bricks" type="Sprite" parent="."]
-position = Vector2( -161, 93 )
+[node name="grass4" type="Sprite" parent="."]
+position = Vector2( 480, 416 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 530, 530, 227, 227 )
+region_rect = Rect2( 0, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="good_bricks"]
-position = Vector2( 640, 234 )
+[node name="StaticBody2D" type="StaticBody2D" parent="grass4"]
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="good_bricks/StaticBody2D4"]
-position = Vector2( -643, -233 )
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass4/StaticBody2D"]
+shape = SubResource( 2 )
 
-[node name="rock_grass" type="Sprite" parent="."]
-position = Vector2( -169, 384 )
+[node name="grass5" type="Sprite" parent="."]
+position = Vector2( 520, 416 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 795, 530, 227, 227 )
+region_rect = Rect2( 32, 32, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="rock_grass"]
-position = Vector2( 648, -57 )
+[node name="StaticBody2D" type="StaticBody2D" parent="grass5"]
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="rock_grass/StaticBody2D5"]
-position = Vector2( -648, 58 )
-shape = SubResource( 1 )
-
-[node name="rock_icegrass" type="Sprite" parent="."]
-position = Vector2( 169, 567 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 265, 795, 227, 227 )
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="rock_icegrass"]
-position = Vector2( 310, -240 )
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="rock_icegrass/StaticBody2D6"]
-position = Vector2( -309, 241 )
-shape = SubResource( 1 )
-
-[node name="bricks" type="Sprite" parent="."]
-position = Vector2( 537, 607 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 530, 795, 227, 227 )
-
-[node name="StaticBody2D7" type="StaticBody2D" parent="bricks"]
-position = Vector2( -58, -280 )
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="bricks/StaticBody2D7"]
-position = Vector2( 57, 280 )
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass5/StaticBody2D"]
+shape = SubResource( 2 )
 one_way_collision = true
+
+[node name="grass6" type="Sprite" parent="."]
+position = Vector2( 568, 416 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass6"]
