@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pngegg.png-77031626e32f58450889922ee17e6228.stex"
+path="res://.import/sols_sprite.jpg-8dc3132a95f546e3c4fc4ea8092c03be.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/pngegg.png"
-dest_files=[ "res://.import/pngegg.png-77031626e32f58450889922ee17e6228.stex" ]
+source_file="res://Images/sols_sprite.jpg"
+dest_files=[ "res://.import/sols_sprite.jpg-8dc3132a95f546e3c4fc4ea8092c03be.stex" ]
 
 [params]
 
