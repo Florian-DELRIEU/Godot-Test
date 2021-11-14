@@ -14,6 +14,10 @@ config/name="Godot-Test"
 run/main_scene="res://Scenes/scene01.tscn"
 config/icon="res://Images/icon.png"
 
+[global]
+
+tree=false
+
 [input]
 
 Shift={
