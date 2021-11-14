@@ -7,6 +7,9 @@ export (int) var JUMP = 700
 export (int) var max_speed = 200
 # Variables
 var vel = Vector2()
+var jump_count = 0
+var curr_max_speed
+var move_anim
 
 func _physics_process(delta):
 	mouvement_loop(delta) 
@@ -18,8 +21,16 @@ func mouvement_loop(delta):
 	var left  = Input.is_action_pressed("ui_left")
 	var jump  = Input.is_action_just_pressed("ui_select")
 	var run   = Input.is_action_pressed("Shift")
-	var curr_max_speed = 2*max_speed if run else max_speed
-	var move_anim = "run" if run else "walk"
+	if is_on_floor(): jump_count = 0
+	
+# is running ?
+	if run:
+		curr_max_speed 	= 2*max_speed
+		move_anim 		= "run"
+	else:
+		curr_max_speed 	= max_speed
+		move_anim	 	= "walk"
+		
 	var dirX = int(right) - int(left)
 # Dir X loop
 	if dirX == +1:
@@ -34,12 +45,13 @@ func mouvement_loop(delta):
 		vel.x = lerp(vel.x, 0, 0.80) # Va de vel.x à 0 par tranche de 80%
 		anim_loop("idle")
 # Dir Y loop
-	if jump and is_on_floor():
+	if jump and jump_count <= 1:
 		vel.y = -JUMP
+		jump_count += 1
 	if vel.y > 0: anim_loop("fall")
 	if vel.y < 0: anim_loop("jump")
 # Print on log
-	print(vel.x, " , ", vel.y, " , ", dirX)
+	print(vel.x, " , ", vel.y, " , ", jump_count)
 	
 func anim_loop(animation):
 	if $Anim.current_animation != animation:
