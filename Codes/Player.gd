@@ -9,9 +9,9 @@ export (int) var max_speed = 200
 var vel = Vector2()
 
 func _physics_process(delta):
-	vel.y += GRAVITY * delta
 	mouvement_loop(delta) 
-	move_and_slide(vel, UP_direction) # bouge le slide de la vitesse :vel:
+	vel.y += GRAVITY * delta
+	vel = move_and_slide(vel, UP_direction) # bouge le slide de la vitesse :vel:
 		
 func mouvement_loop(delta):
 	var right = Input.is_action_pressed("ui_right") # detecte le mapping de touche "ui_right"
@@ -36,7 +36,8 @@ func mouvement_loop(delta):
 # Dir Y loop
 	if jump and is_on_floor():
 		vel.y = -JUMP
-	elif is_on_floor(): vel.y = 0
+	if vel.y > 0: anim_loop("fall")
+	if vel.y < 0: anim_loop("jump")
 # Print on log
 	print(vel.x, " , ", vel.y, " , ", dirX)
 	
