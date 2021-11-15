@@ -22,7 +22,6 @@ func mouvement_loop(delta):
 	var jump  = Input.is_action_just_pressed("ui_select")
 	var run   = Input.is_action_pressed("Shift")
 	if is_on_floor(): jump_count = 0
-	
 # is running ?
 	if run:
 		curr_max_speed 	= 2*max_speed
@@ -30,7 +29,6 @@ func mouvement_loop(delta):
 	else:
 		curr_max_speed 	= max_speed
 		move_anim	 	= "walk"
-		
 	var dirX = int(right) - int(left)
 # Dir X loop
 	if dirX == +1:
