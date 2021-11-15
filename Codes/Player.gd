@@ -1,5 +1,6 @@
 extends KinematicBody2D
 # Constants
+const DEBUG = false
 const UP_direction = Vector2(0,-1)
 export (int) var GRAVITY = 1000
 export (int) var ACC = 30
@@ -49,7 +50,7 @@ func mouvement_loop(delta):
 	if vel.y > 0: anim_loop("fall")
 	if vel.y < 0: anim_loop("jump")
 # Print on log
-	print(vel.x, " , ", vel.y, " , ", jump_count)
+	if DEBUG: print(vel.x, " , ", vel.y, " , ", jump_count)
 	
 func anim_loop(animation):
 	if $Anim.current_animation != animation:
