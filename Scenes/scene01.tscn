@@ -5,7 +5,7 @@
 [ext_resource path="res://tilesets/tile01.tres" type="TileSet" id=3]
 [ext_resource path="res://Codes/debug_label.gd" type="Script" id=4]
 [ext_resource path="res://Images/Ennemy_sprite.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Blob.gd" type="Script" id=6]
+[ext_resource path="res://Codes/Blob.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13, 44 )
@@ -246,11 +246,13 @@ anims/run = SubResource( 5 )
 anims/walk = SubResource( 6 )
 
 [node name="Blob" type="KinematicBody2D" parent="."]
-position = Vector2( 679, 286 )
+position = Vector2( 416, 192 )
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Blob"]
-position = Vector2( -4, -12 )
 texture = ExtResource( 5 )
 hframes = 5
 vframes = 5
@@ -258,8 +260,7 @@ frame = 15
 region_rect = Rect2( 541.221, 1.57249, 22.6101, 173.344 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Blob"]
-visible = false
-position = Vector2( 2, -13.5 )
+position = Vector2( 6, 0 )
 shape = SubResource( 8 )
 
 [node name="Anim_ennemy" type="AnimationPlayer" parent="Blob"]

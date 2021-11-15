@@ -11,8 +11,12 @@ var jump_count = 0
 var curr_max_speed
 var move_anim
 
+func _ready():
+    randomize()
+
 func Timer_timeout():
 	print("Time Out")
+	m = rand_range(0,10)
 
 func _physics_process(delta):
 	mouvement_loop(delta) 
