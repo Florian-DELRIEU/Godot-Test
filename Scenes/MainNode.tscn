@@ -19,3 +19,26 @@ offset = Vector2( 16, 16 )
 hframes = 2
 vframes = 3
 frame = 2
+
+[node name="Label" type="Label" parent="Parent"]
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = -18.0
+text = "Bonjour "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 32.0
+margin_top = 544.0
+margin_right = 96.0
+margin_bottom = 576.0
+text = "Click on me !!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="ButtonPressed"]
