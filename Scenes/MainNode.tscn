@@ -20,7 +20,7 @@ hframes = 2
 vframes = 3
 frame = 2
 
-[node name="Label" type="Label" parent="Parent"]
+[node name="ParentLabel" type="Label" parent="Parent"]
 margin_left = -32.0
 margin_top = -32.0
 margin_right = 32.0
@@ -37,6 +37,16 @@ margin_top = 544.0
 margin_right = 96.0
 margin_bottom = 576.0
 text = "Click on me !!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SceneLabel" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 448.0
+margin_right = 128.0
+margin_bottom = 512.0
+text = "CI_ postion = ( ... , ... )"
 __meta__ = {
 "_edit_use_anchors_": false
 }
