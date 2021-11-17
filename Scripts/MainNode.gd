@@ -16,7 +16,6 @@ func _process(delta):
 	if button_pressed: $Parent.position.x += speed
 	if not button_pressed: $Parent/ParentLabel.text = str($Parent.position)
 
-
 func ButtonPressed():
 	button_pressed = not button_pressed
 	$Parent/ParentLabel.text = "GOOOOO !"

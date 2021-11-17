@@ -8,7 +8,8 @@
 script = ExtResource( 2 )
 
 [node name="Parent" type="Sprite" parent="."]
-position = Vector2( 64, 96 )
+position = Vector2( -288, 336 )
+scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 1 )
 hframes = 2
 vframes = 3
@@ -41,17 +42,32 @@ margin_right = 96.0
 margin_bottom = 576.0
 text = "Click on me !!"
 __meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 160.0
+margin_top = 544.0
+margin_right = 224.0
+margin_bottom = 576.0
+text = "Clockwise"
+__meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SceneLabel" type="Label" parent="."]
-margin_left = 32.0
-margin_top = 448.0
-margin_right = 128.0
-margin_bottom = 512.0
+margin_top = 512.0
+margin_right = 139.0
+margin_bottom = 544.0
 text = "CI_ postion = ( ... , ... )"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 128, 336 )
+current = true
+
 [connection signal="pressed" from="Button" to="." method="ButtonPressed"]
+[connection signal="pressed" from="Button2" to="Parent/Enfant" method="clock_button_pressed"]
