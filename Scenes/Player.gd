@@ -6,7 +6,6 @@ var up = bool()
 var down = bool()
 var dirX = int()
 var dirY = int()
-var DEBUG = true
 
 #var slider = get_parent().get_node("SpeedSlider")
 export (int, 0, 10, 1) var speed
@@ -14,7 +13,6 @@ export (int, 0, 10, 1) var speed
 func _process(delta):
 	checkInputs()
 	mooving_loop()
-	printDEBUG(DEBUG)
 
 func checkInputs():
 	left = Input.is_action_pressed("ui_left")
@@ -27,6 +25,3 @@ func checkInputs():
 func mooving_loop():
 	position.x += dirX * speed
 	position.y += dirY * speed
-
-func printDEBUG(DEBUG_LEVEL):
-	if DEBUG_LEVEL: print( str(dirX) +" , "+ str(dirY) )

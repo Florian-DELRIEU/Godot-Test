@@ -77,6 +77,7 @@ margin_right = 96.0
 margin_bottom = 288.0
 max_value = 20.0
 value = 10.0
+scrollable = false
 __meta__ = {
 "_edit_use_anchors_": false
 }

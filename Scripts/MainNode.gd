@@ -14,10 +14,12 @@ func debug_print():
 	Player input: 		{} , {}
 	Player position: 	{} , {}
 	Slider:				{}
+	Rotating angle: 	{}
 	""".format([
 		player_input_x,player_input_y,
 		$Player.position.x,$Player.position.y,
-		$SpeedSlider.value
+		$SpeedSlider.value,
+		$Player/Shell.angle
 		],"{}")
 	if DEBUG_HUD: $Camera2D/DebugHUD.text = txt
 	else: 		  $Camera2D/DebugHUD.text = ""
