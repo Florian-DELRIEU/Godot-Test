@@ -7,7 +7,8 @@ var time = 0
 export (int) var speed = 2
 export (float,0,10,1) var speed_rotate  # selecteur
 var button_pressed = false
-var Inventaire = [10,20,30]
+
+var Inventaire = [10,20,30] # Like lists
 
 func _ready():
 	var ci_x = parent.position.x
