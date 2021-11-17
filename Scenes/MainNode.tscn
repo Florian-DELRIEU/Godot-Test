@@ -6,7 +6,6 @@
 [node name="MainNode" type="Node2D"]
 script = ExtResource( 2 )
 speed_rotate = 3.0
-color01 = Color( 0.6, 0.396078, 0.396078, 1 )
 
 [node name="Parent" type="Sprite" parent="."]
 position = Vector2( 64, 96 )
