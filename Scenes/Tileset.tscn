@@ -8,7 +8,7 @@ extents = Vector2( 16, 16 )
 [node name="Tileset" type="Node2D"]
 
 [node name="Grass" type="StaticBody2D" parent="."]
-position = Vector2( 16, -32 )
+position = Vector2( 16, 48 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -23,7 +23,7 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="Dirt" type="StaticBody2D" parent="."]
-position = Vector2( -80, -48 )
+position = Vector2( 16, 16 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -39,7 +39,7 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="Flower" type="StaticBody2D" parent="."]
-position = Vector2( -96, 0 )
+position = Vector2( 48, 48 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -51,7 +51,7 @@ vframes = 3
 frame = 2
 
 [node name="Gravel" type="StaticBody2D" parent="."]
-position = Vector2( 80, 0 )
+position = Vector2( 48, 16 )
 __meta__ = {
 "_edit_group_": true
 }
