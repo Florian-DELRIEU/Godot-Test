@@ -4,8 +4,17 @@ onready var parent = get_node("Parent") # = $Parent
 onready var enfant = get_node("Parent/Enfant") # = $Parent/Enfant
 onready var scene_label = get_node("SceneLabel")
 var time = 0
+
 export (int) var speed = 2
-export (int) var speed_rotate = 10
+export (float,0,10,1) var speed_rotate  # selecteur
+export (Color,RGB) var color01
+export (String) var txt01
+export (String,MULTILINE) var txt02
+export (PackedScene) var bullet
+export (Texture) var texture01
+enum Class {GUERRIER,MAGE,VOLEUR}
+export (Class) var choix_classes
+
 var pressed = false
 
 func _ready():
