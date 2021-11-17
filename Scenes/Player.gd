@@ -23,5 +23,4 @@ func checkInputs():
 	dirY = int(down) - int(up)
 
 func mooving_loop():
-	position.x += dirX * speed
-	position.y += dirY * speed
+	move_and_collide(Vector2(dirX,dirY)*speed) # to collide 
