@@ -6,8 +6,6 @@ var time = 0
 export (int) var speed = 2
 var button_pressed = false
 
-var Inventaire = [10,20,30] # Like lists
-
 func _ready():
 	var ci_x = parent.position.x
 	var ci_y = parent.position.y
@@ -15,10 +13,10 @@ func _ready():
 	
 func _process(delta):
 	time += delta
-	$Parent.position.x += speed
+	if button_pressed: $Parent.position.x += speed
 	if not button_pressed: $Parent/ParentLabel.text = str($Parent.position)
 
 
 func ButtonPressed():
 	button_pressed = not button_pressed
-	$Parent/ParentLabel.text = "Lol i don't care about you :p"
+	$Parent/ParentLabel.text = "GOOOOO !"
