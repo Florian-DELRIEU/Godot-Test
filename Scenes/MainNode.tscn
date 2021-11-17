@@ -1,73 +1,71 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Images/Tiles01.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/MainNode.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/rotate_sprite.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 
 [node name="MainNode" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Parent" type="Sprite" parent="."]
-position = Vector2( -288, 336 )
-scale = Vector2( 2.5, 2.5 )
-texture = ExtResource( 1 )
-hframes = 2
-vframes = 3
+[node name="Player" parent="." instance=ExtResource( 4 )]
 
-[node name="Enfant" type="Sprite" parent="Parent"]
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 1 )
-centered = false
-offset = Vector2( 20, 0 )
-hframes = 2
-vframes = 3
-frame = 2
-script = ExtResource( 3 )
-
-[node name="ParentLabel" type="Label" parent="Parent"]
+[node name="Player_label" type="Label" parent="Player"]
 margin_left = -32.0
-margin_top = -32.0
+margin_top = -64.0
 margin_right = 32.0
-margin_bottom = -18.0
+margin_bottom = -50.0
 text = "Bonjour "
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-margin_left = 32.0
-margin_top = 544.0
-margin_right = 96.0
-margin_bottom = 576.0
-text = "Click on me !!"
+[node name="Shell" type="Sprite" parent="Player"]
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 100, 60 )
+hframes = 2
+vframes = 3
+frame = 1
+script = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+margin_left = -96.0
+margin_top = 256.0
+margin_right = 90.0
+margin_bottom = 296.0
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Button2" type="Button" parent="."]
-margin_left = 160.0
-margin_top = 544.0
-margin_right = 224.0
-margin_bottom = 576.0
+[node name="Button" type="Button" parent="HSplitContainer"]
+margin_right = 99.0
+margin_bottom = 40.0
+text = "Click on me !!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="HSplitContainer"]
+margin_left = 111.0
+margin_right = 186.0
+margin_bottom = 40.0
 text = "Clockwise"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SceneLabel" type="Label" parent="."]
-margin_top = 512.0
-margin_right = 139.0
-margin_bottom = 544.0
+margin_left = -96.0
+margin_top = 208.0
+margin_right = 43.0
+margin_bottom = 229.0
 text = "CI_ postion = ( ... , ... )"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 128, 336 )
-current = true
-
-[connection signal="pressed" from="Button" to="." method="ButtonPressed"]
-[connection signal="pressed" from="Button2" to="Parent/Enfant" method="clock_button_pressed"]
