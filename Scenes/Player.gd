@@ -7,8 +7,7 @@ var down = bool()
 var dirX = int()
 var dirY = int()
 
-#var slider = get_parent().get_node("SpeedSlider")
-export (int, 0, 10, 1) var speed
+export (int) var speed = 10
 
 func _process(delta):
 	checkInputs()
