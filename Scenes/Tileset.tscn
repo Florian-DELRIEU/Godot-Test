@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Images/Tiles01.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[node name="Tileset" type="Node2D"]
+
+[node name="Grass" type="StaticBody2D" parent="."]
+position = Vector2( 16, -32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Grass"]
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grass"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Dirt" type="StaticBody2D" parent="."]
+position = Vector2( -80, -48 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Dirt"]
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 3
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dirt"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Flower" type="StaticBody2D" parent="."]
+position = Vector2( -96, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Flower"]
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 3
+frame = 2
+
+[node name="Gravel" type="StaticBody2D" parent="."]
+position = Vector2( 80, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Gravel"]
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 3
+frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravel"]
+visible = false
+shape = SubResource( 1 )

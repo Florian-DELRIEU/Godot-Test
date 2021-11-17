@@ -39,7 +39,6 @@ margin_left = -496.0
 margin_top = -288.0
 margin_right = -320.0
 margin_bottom = -192.0
-text = "CI_ postion = ( ... , ... )"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -73,11 +72,10 @@ __meta__ = {
 [node name="SpeedSlider" type="HSlider" parent="."]
 margin_left = -96.0
 margin_top = 272.0
-margin_right = 96.0
+margin_right = 108.0
 margin_bottom = 288.0
 max_value = 20.0
 value = 10.0
-scrollable = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
