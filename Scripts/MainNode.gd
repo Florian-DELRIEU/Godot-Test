@@ -17,6 +17,7 @@ func debug_print():
 	Rotating angle: 	{} °
 	
 	------ Kinetic Ball -----
+	Position: 			{}
 	Speed: 				{} px/s
 	Bounce:				{}
 	Damp:				{}
@@ -26,6 +27,7 @@ func debug_print():
 		$Player.position.x,$Player.position.y,
 		$SpeedSlider.value,
 		$Player/Shell.angle,
+		$Kineticball.position,
 		$Kineticball.linear_velocity.length(),
 		$Kineticball.bounce,
 		$Kineticball.linear_damp,

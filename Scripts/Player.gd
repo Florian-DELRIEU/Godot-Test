@@ -25,3 +25,4 @@ func checkInputs():
 
 func mooving_loop():
 	move_and_collide(Vector2(dirX,dirY)*speed) # to collide 
+
