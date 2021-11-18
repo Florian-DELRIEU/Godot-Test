@@ -4,6 +4,9 @@ var player_input_y
 var txt = ""
 var DEBUG_HUD = true
 
+func _ready():
+	$Node/item.connect("loot",self,"recup_loot")
+
 func _process(delta):
 	player_input_x = $Player.dirX
 	player_input_y = $Player.dirY
@@ -36,11 +39,12 @@ func debug_print():
 	if DEBUG_HUD: $Camera2D/DebugHUD.text = txt
 	else: 		  $Camera2D/DebugHUD.text = ""
 
-
 func InitialPose_button():
 	$Player.position.x = 0
 	$Player.position.y = 0
 
-
 func Debug_pressed():
 	DEBUG_HUD = not DEBUG_HUD
+
+func recup_loot(valeur):
+	print("YEppeppepe")
