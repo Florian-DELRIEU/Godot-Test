@@ -20,7 +20,7 @@ func debug_print():
 	Speed: 				{} px/s
 	Bounce:				{}
 	Damp:				{}
-	
+	friction:			{}
 	""".format([
 		player_input_x,player_input_y,
 		$Player.position.x,$Player.position.y,
@@ -29,6 +29,7 @@ func debug_print():
 		$Kineticball.linear_velocity.length(),
 		$Kineticball.bounce,
 		$Kineticball.linear_damp,
+		$Kineticball.friction
 		],"{}")
 	if DEBUG_HUD: $Camera2D/DebugHUD.text = txt
 	else: 		  $Camera2D/DebugHUD.text = ""

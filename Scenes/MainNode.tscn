@@ -32,6 +32,9 @@ vframes = 3
 frame = 1
 script = ExtResource( 3 )
 
+[node name="Kineticball" parent="." instance=ExtResource( 5 )]
+position = Vector2( -352, 144 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
@@ -88,9 +91,6 @@ polygon = PoolVector2Array( -560, 304, -560, -384, 656, -384, 656, 304, 512, 304
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( -560, 336, -560, 304, 656, 304, 656, 336 )
-
-[node name="Kineticball" parent="." instance=ExtResource( 5 )]
-position = Vector2( -352, 144 )
 
 [connection signal="pressed" from="HSplitContainer/Button" to="." method="InitialPose_button"]
 [connection signal="pressed" from="HSplitContainer/Button2" to="." method="Debug_pressed"]
