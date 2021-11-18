@@ -14,12 +14,21 @@ func debug_print():
 	Player input: 		{} , {}
 	Player position: 	{} , {}
 	Slider:				{}
-	Rotating angle: 	{}
+	Rotating angle: 	{} °
+	
+	------ Kinetic Ball -----
+	Speed: 				{} px/s
+	Bounce:				{}
+	Damp:				{}
+	
 	""".format([
 		player_input_x,player_input_y,
 		$Player.position.x,$Player.position.y,
 		$SpeedSlider.value,
-		$Player/Shell.angle
+		$Player/Shell.angle,
+		$Kineticball.linear_velocity.length(),
+		$Kineticball.bounce,
+		$Kineticball.linear_damp,
 		],"{}")
 	if DEBUG_HUD: $Camera2D/DebugHUD.text = txt
 	else: 		  $Camera2D/DebugHUD.text = ""
