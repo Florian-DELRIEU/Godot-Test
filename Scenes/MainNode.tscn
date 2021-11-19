@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Images/Tiles01.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/MainNode.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/rotate_sprite.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Kineticball.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/item.tscn" type="PackedScene" id=6]
 
 [node name="MainNode" type="Node2D"]
 script = ExtResource( 2 )
@@ -92,17 +91,6 @@ polygon = PoolVector2Array( -560, 304, -560, -384, 656, -384, 656, 304, 512, 304
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( -560, 336, -560, 304, 656, 304, 656, 336 )
-
-[node name="Node" type="Node" parent="."]
-
-[node name="item" parent="." instance=ExtResource( 6 )]
-
-[node name="item2" parent="." instance=ExtResource( 6 )]
-position = Vector2( -256, -112 )
-
-[node name="item3" parent="." instance=ExtResource( 6 )]
-position = Vector2( -176, 96 )
-item_type = 1
 
 [connection signal="pressed" from="HSplitContainer/Button" to="." method="InitialPose_button"]
 [connection signal="pressed" from="HSplitContainer/Button2" to="." method="Debug_pressed"]

@@ -8,7 +8,6 @@
 radius = 16.0
 
 [node name="item" type="Area2D"]
-position = Vector2( -256, 0 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true

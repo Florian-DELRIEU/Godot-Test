@@ -4,13 +4,15 @@ var player_input_y
 var txt = ""
 var DEBUG_HUD = true
 
-func _ready():
-	pass
-
 func _process(delta):
 	player_input_x = $Player.dirX
 	player_input_y = $Player.dirY
 	debug_print()
+
+func recup_loot(valeur):
+	print("J'ai récupérer l'item " + str(valeur)) 
+
+##################################
 
 func debug_print():
 	txt = """DEBUG LABEL
@@ -46,5 +48,3 @@ func InitialPose_button():
 func Debug_pressed():
 	DEBUG_HUD = not DEBUG_HUD
 
-func recup_loot(valeur):
-	print("J'ai récupérer l'item " + str(valeur))
