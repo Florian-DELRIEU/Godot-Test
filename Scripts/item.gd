@@ -1,6 +1,6 @@
 extends Area2D
 
-signal loot(valeur)
+signal loot(valeur) # add new signal
 
 enum type_item {COINS, COEUR}
 export (type_item) var item_type
@@ -16,10 +16,10 @@ func _ready():
 			txt = "Coeur"
 			
 
-func Coins_touched(body):
-	self.emit_signal("loot",item_type)
+func Coins_touched(body):  # func connected
+	self.emit_signal("loot",item_type) # valeur = item_type
 	if type_item.COINS:
 		print("add "+txt)
 	if type_item.COEUR:
-		print("add Coeur")
+		print("add "+txt)
 	queue_free()  #delete node

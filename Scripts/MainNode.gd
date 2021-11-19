@@ -5,7 +5,11 @@ var txt = ""
 var DEBUG_HUD = true
 
 func _ready():
-	$Node/item.connect("loot",self,"recup_loot")
+	"""
+	Connecte le signal :loot: a self via la fonction :recup_loot:
+		- Comme connexion normale 
+	"""
+	$item.connect("loot",self,"recup_loot")
 
 func _process(delta):
 	player_input_x = $Player.dirX
@@ -47,4 +51,4 @@ func Debug_pressed():
 	DEBUG_HUD = not DEBUG_HUD
 
 func recup_loot(valeur):
-	print("YEppeppepe")
+	print("J'ai récupérer l'item " + str(valeur))

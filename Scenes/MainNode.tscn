@@ -95,14 +95,7 @@ polygon = PoolVector2Array( -560, 336, -560, 304, 656, 304, 656, 336 )
 
 [node name="Node" type="Node" parent="."]
 
-[node name="item" parent="Node" instance=ExtResource( 6 )]
-
-[node name="item2" parent="Node" instance=ExtResource( 6 )]
-position = Vector2( -336, 0 )
-
-[node name="item3" parent="Node" instance=ExtResource( 6 )]
-position = Vector2( 0, -208 )
-item_type = 1
+[node name="item" parent="." instance=ExtResource( 6 )]
 
 [connection signal="pressed" from="HSplitContainer/Button" to="." method="InitialPose_button"]
 [connection signal="pressed" from="HSplitContainer/Button2" to="." method="Debug_pressed"]
