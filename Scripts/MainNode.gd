@@ -5,11 +5,7 @@ var txt = ""
 var DEBUG_HUD = true
 
 func _ready():
-	"""
-	Connecte le signal :loot: a self via la fonction :recup_loot:
-		- Comme connexion normale 
-	"""
-	$item.connect("loot",self,"recup_loot")
+	pass
 
 func _process(delta):
 	player_input_x = $Player.dirX

@@ -97,5 +97,12 @@ polygon = PoolVector2Array( -560, 336, -560, 304, 656, 304, 656, 336 )
 
 [node name="item" parent="." instance=ExtResource( 6 )]
 
+[node name="item2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -256, -112 )
+
+[node name="item3" parent="." instance=ExtResource( 6 )]
+position = Vector2( -176, 96 )
+item_type = 1
+
 [connection signal="pressed" from="HSplitContainer/Button" to="." method="InitialPose_button"]
 [connection signal="pressed" from="HSplitContainer/Button2" to="." method="Debug_pressed"]
