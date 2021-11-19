@@ -4,6 +4,12 @@ var player_input_y
 var txt = ""
 var DEBUG_HUD = true
 
+# Charge la scene de l'item
+onready var item = preload("res://Scenes/item.tscn")
+
+func _ready():
+	SpawnItem()
+
 func _process(delta):
 	player_input_x = $Player.dirX
 	player_input_y = $Player.dirY
@@ -11,6 +17,12 @@ func _process(delta):
 
 func recup_loot(valeur):
 	print("J'ai récupérer l'item " + str(valeur)) 
+	
+func SpawnItem():
+	var i = item.instance() # cree instance de item
+	i.Start(Vector2(200,200),1)
+	self.add_child(i) # ajoute enfant :i: à self
+	pass
 
 ##################################
 

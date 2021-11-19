@@ -6,7 +6,11 @@ enum type_item {COINS, COEUR}
 export (type_item) var item_type
 var txt
 
-func _ready():
+func _ready(): # peut pas avoir d'argument
+	pass
+	
+func Start(position,type):
+	self.position = position
 	self.connect("loot",get_parent(),"recup_loot") # connect le signal
 	match item_type:
 		type_item.COINS:
