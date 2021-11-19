@@ -19,7 +19,6 @@ func Start(position,type):
 		type_item.COEUR:
 			$Sprite.modulate = Color(1,0,0)
 			txt = "Coeur"
-			
 
 func Coins_touched(body):  # func connected
 	self.emit_signal("loot",item_type) # valeur = item_type
@@ -27,4 +26,4 @@ func Coins_touched(body):  # func connected
 		print("add "+txt) 
 	if type_item.COEUR:
 		print("add "+txt)
-	queue_free()  #delete node
+	self.queue_free()  #delete node
