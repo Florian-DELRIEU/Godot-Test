@@ -6,6 +6,7 @@ var DEBUG_HUD = true
 	
 # Charge la scene de l'item
 onready var item = preload("res://Scenes/item.tscn")
+onready var screen = get_viewport().size
 
 func _ready():
 	SpawnItem(5)
@@ -24,8 +25,8 @@ func recup_loot(valeur):
 func SpawnItem(nb_items):
 	randomize()
 	for x in nb_items:
-		var x_pose = rand_range(-300,300)
-		var y_pose = rand_range(-400,400)
+		var x_pose = rand_range(-screen.x/2,screen.x/2)
+		var y_pose = rand_range(-screen.y/2,screen.y/2)
 		var type = randi() % 3
 		print(type)
 		var i = item.instance() # cree instance de item
@@ -41,6 +42,11 @@ func debug_print():
 	Slider:				{}
 	Rotating angle: 	{} °
 	
+	------ Screen -----
+	Size = {}
+	x = {}
+	y = {}
+	
 	------ Kinetic Ball -----
 	Position: 			{}
 	Speed: 				{} px/s
@@ -52,6 +58,11 @@ func debug_print():
 		$Player.position.x,$Player.position.y,
 		$SpeedSlider.value,
 		$Player/Shell.angle,
+		
+		screen,
+		screen.x,
+		screen.y,
+		
 		$Kineticball.position,
 		$Kineticball.linear_velocity.length(),
 		$Kineticball.bounce,
