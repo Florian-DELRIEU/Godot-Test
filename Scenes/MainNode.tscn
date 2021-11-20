@@ -10,6 +10,7 @@
 script = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 480, 269 )
 
 [node name="Player_label" type="Label" parent="Player"]
 margin_left = -32.0
@@ -32,20 +33,10 @@ vframes = 3
 frame = 1
 script = ExtResource( 3 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-
-[node name="DebugHUD" type="Label" parent="Camera2D"]
-margin_left = -496.0
-margin_top = -288.0
-margin_right = -320.0
-margin_bottom = -192.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Kineticball" parent="." instance=ExtResource( 5 )]
-position = Vector2( -416, -224 )
+position = Vector2( 128, -80 )
+Bounce_Coeff = 0.929
+Linear_Coeff = -0.274
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 margin_left = -96.0
@@ -91,6 +82,18 @@ polygon = PoolVector2Array( -560, 304, -560, -384, 656, -384, 656, 304, 512, 304
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( -560, 336, -560, 304, 656, 304, 656, 336 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="DebugHUD" type="Label" parent="Camera2D"]
+margin_left = -496.0
+margin_top = -288.0
+margin_right = -320.0
+margin_bottom = -192.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="HSplitContainer/Button" to="." method="InitialPose_button"]
 [connection signal="pressed" from="HSplitContainer/Button2" to="." method="Debug_pressed"]
