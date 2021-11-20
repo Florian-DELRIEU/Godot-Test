@@ -8,8 +8,7 @@ var DEBUG_HUD = true
 onready var item = preload("res://Scenes/item.tscn")
 
 func _ready():
-	randomize()
-	for x in 5: SpawnItem()
+	SpawnItem(5)
 
 func _process(delta):
 	player_input_x = $Player.dirX
@@ -22,14 +21,16 @@ func recup_loot(valeur):
 	elif valeur == "COEUR": print("KAWAIIII !!")
 	elif valeur == "PIECE": print("BLING BLING !!")
 
-func SpawnItem():
-	var x_pose = rand_range(-300,300)
-	var y_pose = rand_range(-400,400)
-	var type = randi() % 3
-	print(type)
-	var i = item.instance() # cree instance de item
-	i.Start(Vector2(x_pose,y_pose),type)
-	self.add_child(i) #ajoute enfant :i: à self
+func SpawnItem(nb_items):
+	randomize()
+	for x in nb_items:
+		var x_pose = rand_range(-300,300)
+		var y_pose = rand_range(-400,400)
+		var type = randi() % 3
+		print(type)
+		var i = item.instance() # cree instance de item
+		i.Start(Vector2(x_pose,y_pose),type)
+		self.add_child(i) #ajoute enfant :i: à self
 
 ##################################
 
@@ -66,3 +67,6 @@ func InitialPose_button():
 
 func Debug_pressed():
 	DEBUG_HUD = not DEBUG_HUD
+
+func SpawnItem_pressed():
+	SpawnItem(5)

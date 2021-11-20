@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Kineticball.tscn" type="PackedScene" id=5]
 
 [node name="MainNode" type="Node2D"]
+position = Vector2( 560, 384 )
 script = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
@@ -39,43 +40,6 @@ linear_velocity = Vector2( 0, 0 )
 Bounce_Coeff = 0.929
 Linear_Coeff = -0.274
 
-[node name="HSplitContainer" type="HSplitContainer" parent="."]
-margin_left = -96.0
-margin_top = 229.0
-margin_right = 96.0
-margin_bottom = 269.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="HSplitContainer"]
-margin_right = 105.0
-margin_bottom = 40.0
-text = "Initial Position"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button2" type="Button" parent="HSplitContainer"]
-margin_left = 117.0
-margin_right = 204.0
-margin_bottom = 40.0
-text = "Debug HUD"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SpeedSlider" type="HSlider" parent="."]
-margin_left = -96.0
-margin_top = 272.0
-margin_right = 108.0
-margin_bottom = 288.0
-max_value = 20.0
-value = 10.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
@@ -96,5 +60,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="HSplitContainer/Button" to="." method="InitialPose_button"]
-[connection signal="pressed" from="HSplitContainer/Button2" to="." method="Debug_pressed"]
+[node name="SpeedSlider" type="HSlider" parent="."]
+visible = false
+margin_left = -96.0
+margin_top = 272.0
+margin_right = 108.0
+margin_bottom = 288.0
+max_value = 20.0
+value = 10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = -128.0
+margin_top = 240.0
+margin_right = 166.0
+margin_bottom = 280.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_right = 105.0
+margin_bottom = 40.0
+text = "Initial Position"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+margin_left = 109.0
+margin_right = 196.0
+margin_bottom = 40.0
+text = "Debug HUD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+margin_left = 200.0
+margin_right = 294.0
+margin_bottom = 40.0
+text = "Spawn Items"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="InitialPose_button"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="Debug_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button3" to="." method="SpawnItem_pressed"]
