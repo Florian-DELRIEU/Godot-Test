@@ -13,9 +13,9 @@ script = ExtResource( 2 )
 
 [node name="Player_label" type="Label" parent="Player"]
 margin_left = -32.0
-margin_top = -64.0
+margin_top = -48.0
 margin_right = 32.0
-margin_bottom = -50.0
+margin_bottom = -34.0
 text = "Bonjour "
 align = 1
 __meta__ = {
