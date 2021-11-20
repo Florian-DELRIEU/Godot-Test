@@ -10,7 +10,7 @@
 script = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 480, 269 )
+position = Vector2( 448, 208 )
 
 [node name="Player_label" type="Label" parent="Player"]
 margin_left = -32.0
@@ -34,7 +34,8 @@ frame = 1
 script = ExtResource( 3 )
 
 [node name="Kineticball" parent="." instance=ExtResource( 5 )]
-position = Vector2( 128, -80 )
+position = Vector2( -560, 192 )
+linear_velocity = Vector2( 0, 0 )
 Bounce_Coeff = 0.929
 Linear_Coeff = -0.274
 

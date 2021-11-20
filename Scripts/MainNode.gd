@@ -8,7 +8,8 @@ var DEBUG_HUD = true
 onready var item = preload("res://Scenes/item.tscn")
 
 func _ready():
-	for x in 15: SpawnItem()
+	randomize()
+	for x in 5: SpawnItem()
 
 func _process(delta):
 	player_input_x = $Player.dirX
@@ -16,12 +17,15 @@ func _process(delta):
 	debug_print()
 
 func recup_loot(valeur):
-	print("J'ai récupérer l'item " + str(valeur)) 
+	#print("J'ai récupérer l'item " + str(valeur))
+	if valeur == "BOMBE": print("BOUUUM !!")
+	elif valeur == "COEUR": print("KAWAIIII !!")
+	elif valeur == "PIECE": print("BLING BLING !!")
 
 func SpawnItem():
-	var x_pose = rand_range(-600,600)
+	var x_pose = rand_range(-300,300)
 	var y_pose = rand_range(-400,400)
-	var type = randi() % 2
+	var type = randi() % 3
 	print(type)
 	var i = item.instance() # cree instance de item
 	i.Start(Vector2(x_pose,y_pose),type)
