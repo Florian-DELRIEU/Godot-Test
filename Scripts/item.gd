@@ -15,18 +15,19 @@ func Start(position,item_type):
 	match item_type:	# Parametre des Items
 		type_item.PIECE:
 			$Sprite.modulate = Color( 1, 1, 0, 1 )
-			txt = "Piece"
+			txt = "Bling bling !"
 		type_item.COEUR:
 			$Sprite.modulate = Color( 1, 0, 0, 1 ) 
-			txt = "Coeur"
+			txt = "+1 PV"
 		type_item.BOMBE:
-			$Sprite.modulate = Color( 0, 0, 0, 0 ) 
-			txt = "Bombe"
+			$Sprite.modulate = Color( 0, 0, 0, 1 ) 
+			txt = "BOUM ! -1 PV"
 
 func Coins_touched(body):  # func connected
 	self.emit_signal("loot",item_type) # valeur = item_type
-	print("add "+txt) 
-	if type_item.PIECE: pass
+	print(txt) 
+	if type_item.PIECE: pass # Toujours vraie
 	if type_item.COEUR: pass
 	if type_item.BOMBE: pass
+	print("--------------")
 	self.queue_free()  #delete node
