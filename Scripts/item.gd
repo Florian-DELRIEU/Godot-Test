@@ -8,7 +8,7 @@ var txt
 func _ready(): # peut pas avoir d'argument
 	pass
 	
-func Spawn_item(position,item_type): # Fais spawner un item
+func InitializeItem(position,item_type): # Fais spawner un item
 	self.position = position
 	match item_type:	# Parametre des Items en fonction de leurs types
 		type_item.PIECE:

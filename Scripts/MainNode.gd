@@ -25,7 +25,7 @@ func SpawnItem(nb_items):
 		var type = randi() % 3
 		print(type)
 		var i = item.instance() # cree instance de item
-		i.Spawn_item(Vector2(x_pose,y_pose),type)
+		i.InitializeItem(Vector2(x_pose,y_pose),type)
 		self.add_child(i) #ajoute enfant :i: à self
 
 ##################################
