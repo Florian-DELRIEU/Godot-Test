@@ -16,11 +16,6 @@ func _process(delta):
 	player_input_y = $Player.dirY
 	debug_print()
 
-func recup_loot(valeur):
-	#print("J'ai récupérer l'item " + str(valeur))
-	if valeur == "BOMBE": print("BOUUUM !!")
-	elif valeur == "COEUR": print("KAWAIIII !!")
-	elif valeur == "PIECE": print("BLING BLING !!")
 
 func SpawnItem(nb_items):
 	randomize()
