@@ -9,7 +9,7 @@ var txt
 func _ready(): # peut pas avoir d'argument
 	pass
 	
-func Start(position,item_type):
+func Spawn_item(position,item_type):
 	self.position = position
 	self.connect("loot",get_parent(),"recup_loot") # connect le signal
 	match item_type:	# Parametre des Items
