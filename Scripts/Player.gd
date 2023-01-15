@@ -6,8 +6,8 @@ var up = bool()
 var down = bool()
 var dirX = int()
 var dirY = int()
-var PV = 100
 
+export (int) var PV = 100
 export (int) var speed = 10
 
 func _process(delta):

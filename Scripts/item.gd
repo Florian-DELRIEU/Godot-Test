@@ -8,18 +8,18 @@ var txt
 func _ready(): # peut pas avoir d'argument
 	pass
 	
-func Spawn_item(position,item_type):
+func Spawn_item(position,item_type): # Fais spawner un item
 	self.position = position
-	match item_type:	# Parametre des Items
+	match item_type:	# Parametre des Items en fonction de leurs types
 		type_item.PIECE:
 			$Sprite.modulate = Color( 1, 1, 0, 1 )
-			txt = "Bling bling !"
+			txt = "Piece: +1 pts"
 		type_item.COEUR:
 			$Sprite.modulate = Color( 1, 0, 0, 1 ) 
-			txt = "+1 PV"
+			txt = "Coeur: +10 PV"
 		type_item.BOMBE:
 			$Sprite.modulate = Color( 0, 0, 0, 1 ) 
-			txt = "BOUM ! -1 PV"
+			txt = "Bombe: -50 PV"
 
 func Item_touched(body):  # func connected
 	print(txt) 
