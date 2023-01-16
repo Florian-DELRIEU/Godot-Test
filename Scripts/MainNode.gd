@@ -4,9 +4,9 @@ var player_input_y
 var txt = ""
 var DEBUG_HUD = true
 	
-# Charge la scene de l'item
-onready var item = preload("res://Scenes/item.tscn")
-onready var screen = get_viewport().size
+# Charge la scene de :item:
+onready var Item = preload("res://Scenes/item.tscn")
+onready var screen_size = get_viewport().size
 
 func _ready():
 	SpawnItem(5)
@@ -18,15 +18,15 @@ func _process(delta):
 
 
 func SpawnItem(nb_items):
-	randomize()
+	randomize()  # Re initialise la graine random
 	for x in nb_items:
-		var x_pose = rand_range(-screen.x/2,screen.x/2)
-		var y_pose = rand_range(-screen.y/2,screen.y/2)
+		var x_pose = rand_range(-screen_size.x/2,screen_size.x/2)
+		var y_pose = rand_range(-screen_size.y/2,screen_size.y/2)
 		var type = randi() % 3
 		print(type)
-		var i = item.instance() # cree instance de item
-		i.InitializeItem(Vector2(x_pose,y_pose),type)
-		self.add_child(i) #ajoute enfant :i: à self
+		var i = Item.instance() # cree instance de item (basique)
+		i.InitializeItem(Vector2(x_pose,y_pose),type) # positionne et attribut le type a :item:
+		self.add_child(i) #ajoute enfant :i: à self (i rentre dans l'arborescence de :MainNode:)
 
 ##################################
 
@@ -37,7 +37,7 @@ func debug_print():
 	Slider:				{}
 	Rotating angle: 	{} °
 	
-	------ Screen -----
+	------ screen_size -----
 	Size = {}
 	x = {}
 	y = {}
@@ -54,9 +54,9 @@ func debug_print():
 		$SpeedSlider.value,
 		$Player/Shell.angle,
 		
-		screen,
-		screen.x,
-		screen.y,
+		screen_size,
+		screen_size.x,
+		screen_size.y,
 		
 		$Kineticball.position,
 		$Kineticball.linear_velocity.length(),
