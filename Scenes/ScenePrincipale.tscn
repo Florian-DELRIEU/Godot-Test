@@ -4,7 +4,7 @@
 [ext_resource path="res://tilesets/tile01.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/Blob.tscn" type="PackedScene" id=5]
 
-[node name="scene01" type="Node2D"]
+[node name="ScenePrincipale" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
