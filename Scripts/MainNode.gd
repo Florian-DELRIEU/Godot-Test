@@ -51,7 +51,7 @@ func debug_print():
 	""".format([
 		player_input_x,player_input_y,
 		$Player.position.x,$Player.position.y,
-		$SpeedSlider.value,
+		$Camera2D/SpeedSlider.value,
 		$Player/Shell.angle,
 		
 		screen_size,
